@@ -2,13 +2,13 @@
 	"name": "typograf-vscode",
 	"description": "Service of automatic text processing according to typographical standards",
 	"version": "1.0.0",
-	"publisher": "itlnx",
+	"publisher": "codeshake",
 	"author": "Sergei Lutov <@codeshake>",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/codeshake/typograf-vscode.git"
 	},
-	"homepage": "https://marketplace.visualstudio.com/items?itemName=itlnx.typograf-vscode",
+	"homepage": "https://marketplace.visualstudio.com/items?itemName=codeshake.typograf-vscode",
 	"galleryBanner": {
 		"color": "#384BEC",
 		"theme": "light"

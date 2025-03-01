@@ -6,12 +6,12 @@
 
 Install through VS Code extensions. Search for `Typograf`
 
-[Visual Studio Code Market Place: Typograf](https://marketplace.visualstudio.com/items?itemName=itlnx.typograf-vscode)
+[Visual Studio Code Market Place: Typograf](https://marketplace.visualstudio.com/items?itemName=codeshake.typograf-vscode)
 
 Can also be installed in VS Code: Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.
 
 ```
-ext install itlnx.typograf-vscode
+ext install codeshake.typograf-vscode
 ```
 
 ## Usage
