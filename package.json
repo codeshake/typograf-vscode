@@ -1,13 +1,23 @@
 {
-	"name": "typograf",
-	"description": "",
+	"name": "typograf-vscode",
+	"description": "Service of automatic text processing according to typographical standards",
 	"version": "1.0.0",
-	"publisher": "",
-	"repository": "https://github.com/codeshake/vscode-typograf",
+	"publisher": "codeshake",
+	"author": "Sergei Lutov <@codeshake>",
+	"repository": "https://github.com/codeshake/typograf-vscode",
 	"engines": {
 		"vscode": "^1.74.0"
 	},
 	"activationEvents": [],
+	"keywords": [
+		"text",
+		"typography",
+		"formatter"
+	],
+	"categories": [
+		"Formatters"
+	],
+	"icon": "icon.png",
 	"main": "./dist/index.js",
 	"contributes": {
 		"configuration": {
