@@ -1,0 +1,125 @@
+{
+	"name": "typograf",
+	"description": "",
+	"version": "1.0.0",
+	"publisher": "",
+	"repository": "https://github.com/codeshake/vscode-typograf",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"activationEvents": [],
+	"main": "./dist/index.js",
+	"contributes": {
+		"configuration": {
+			"title": "Typograf",
+			"properties": {
+				"typograf.entityType": {
+					"type": "number",
+					"description": "Type of entities",
+					"default": 4,
+					"enum": [
+						1,
+						2,
+						3,
+						4
+					],
+					"enumDescriptions": [
+						"HTML",
+						"XML",
+						"Plain text",
+						"Mixed"
+					]
+				},
+				"typograf.useBr": {
+					"type": "boolean",
+					"description": "Use line breakes (<br> tag)",
+					"default": false
+				},
+				"typograf.useP": {
+					"type": "boolean",
+					"description": "Use paragraphs (<p> tag)",
+					"default": false
+				},
+				"typograf.maxNobr": {
+					"type": "number",
+					"description": "Maximum count of non-breakes",
+					"default": 0
+				},
+				"typograf.quotA": {
+					"type": "string",
+					"description": "First level quotes",
+					"default": "laquo raquo",
+					"enum": [
+						"laquo raquo",
+						"bdquo ldquo",
+						"ldquo rdquo",
+						"quot quot",
+						"lsquo rsquo",
+						"sbquo lsquo"
+					],
+					"enumDescriptions": [
+						"French",
+						"German",
+						"English doubles",
+						"Programist",
+						"English singles",
+						"Polish-Hungarian singles"
+					]
+				},
+				"typograf.quotB": {
+					"type": "string",
+					"description": "Second level quotes",
+					"default": "bdquo ldquo",
+					"enum": [
+						"laquo raquo",
+						"bdquo ldquo",
+						"ldquo rdquo",
+						"quot quot",
+						"lsquo rsquo",
+						"sbquo lsquo"
+					],
+					"enumDescriptions": [
+						"French",
+						"German",
+						"English doubles",
+						"Programist",
+						"English singles",
+						"Polish-Hungarian singles"
+					]
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "extension.typograf",
+				"title": "Typograf"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "extension.typograf",
+					"when": "editorHasSelection",
+					"group": "1_modification"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "extension.typograf",
+				"key": "ctrl+shift+t",
+				"mac": "cmd+shift+t",
+				"when": "editorHasSelection"
+			}
+		]
+	},
+	"scripts": {
+		"start": "tsc -p tsconfig.json --watch",
+		"build": "tsc -p tsconfig.json"
+	},
+	"devDependencies": {
+		"@types/node": "^22.13.5",
+		"@types/vscode": "^1.97.0",
+		"typescript": "^5.7.3"
+	}
+}
