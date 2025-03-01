@@ -1,0 +1,29 @@
+name: Publish
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          path: ./app
+
+      - name: Install Node js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
+
+      - name: Build extension
+        working-directory: ./app
+        run: |
+          npm ci
+          npm run build
+          npx vsce package
+          npx vsce publish -p ${{ secrets.ACTIONS_AZURE_TOKEN }}
