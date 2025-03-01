@@ -1,6 +1,6 @@
 {
 	"name": "typograf-vscode",
-	"displayName": "Typograf",
+	"displayName": "Typograf — Text formatter",
 	"description": "Service of automatic text processing according to typographical standards",
 	"version": "1.0.0",
 	"publisher": "codeshake",
