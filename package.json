@@ -1,5 +1,6 @@
 {
 	"name": "typograf-vscode",
+	"displayName": "Typograf",
 	"description": "Service of automatic text processing according to typographical standards",
 	"version": "1.0.0",
 	"publisher": "codeshake",
@@ -10,7 +11,7 @@
 	},
 	"homepage": "https://marketplace.visualstudio.com/items?itemName=codeshake.typograf-vscode",
 	"galleryBanner": {
-		"color": "#384BEC",
+		"color": "#ffffff",
 		"theme": "light"
 	},
 	"engines": {
