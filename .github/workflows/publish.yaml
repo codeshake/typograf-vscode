@@ -25,5 +25,5 @@ jobs:
         run: |
           npm ci
           npm run build
-          npx vsce package
           npx vsce publish -p ${{ secrets.ACTIONS_AZURE_TOKEN }}
+          npx ovsx publish -p ${{ secrets.ACTIONS_OVSX_TOKEN }}
