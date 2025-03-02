@@ -1,4 +1,4 @@
-import http from "node:http"
+import https from "node:https"
 
 const XML_REPLACERS = [
     ["&", "&amp;"],
@@ -53,12 +53,18 @@ const generateXmlBody = ({
 
 const resultRegularExpression = /<ProcessTextResult>(?<find>(.|\n)*?)<\/ProcessTextResult>/gm
 
-const getResultFromXml = (value: string) => {
+const getResultFromXml = (value: string, status: number) => {
     const matches = value.matchAll(resultRegularExpression).toArray()
 
     for (const match of matches) {
         if (match.groups?.find) {
-            return replaceXmlSymbolsInString(match.groups.find.trim(), false)
+            const result = replaceXmlSymbolsInString(match.groups.find.trim(), false)
+
+            if (status < 400) {
+                return result
+            } else {
+                throw new Error(result)
+            }
         }
     }
 
@@ -68,7 +74,7 @@ const getResultFromXml = (value: string) => {
 export const Typograf = (properties: TypografProperties) => new Promise<string>((resolve, reject) => {
     const body = generateXmlBody(properties)
 
-    const request = http.request("http://typograf.artlebedev.ru/webservices/typograf.asmx", {
+    const request = https.request("https://typograf.artlebedev.ru/webservices/typograf.asmx", {
         method: "POST",
         headers: {
             "Content-Type": "text/xml",
@@ -87,8 +93,10 @@ export const Typograf = (properties: TypografProperties) => new Promise<string>(
         })
 
         response.on("end", () => {
+            const status = response.statusCode ?? 400
+
             try {
-                resolve(getResultFromXml(data))
+                resolve(getResultFromXml(data, status))
             } catch (error) {
                 reject(error)
             }
