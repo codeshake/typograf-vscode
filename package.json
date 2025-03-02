@@ -2,7 +2,7 @@
 	"name": "typograf-vscode",
 	"displayName": "Typograf — Text formatter",
 	"description": "Service of automatic text processing according to typographical standards",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "codeshake",
 	"author": "Sergei Lutov <@codeshake>",
 	"repository": {
